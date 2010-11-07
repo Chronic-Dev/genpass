@@ -184,7 +184,7 @@ uint8* decrypt_key(const char* filesystem, uint8* passphrase) {
   uint8* out = malloc(0x30);
   free(buffer);
 
-  for (i = 0; i < 0x20; i++) {
+  for (i = 0; i < 0x80; i++) {
     if (fread(data, 1, 0x30, fd) <= 0) {
       fprintf(stderr, "Error reading filesystem image");
       free(out);
